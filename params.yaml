@@ -1,1 +1,6 @@
-key: value
+training:
+  epochs: 100000       # Number of training epochs
+  image_size: 320      # Input image size (adjusted based on RescaleT(320))
+  learning_rate: 0.001 # Learning rate for the optimizer
+  batch_size: 12       # Batch size for training
+  save_frequency: 2000  # Frequency of saving the model
