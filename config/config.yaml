@@ -1,0 +1,9 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  train_source_url: http://saliencydetection.net/duts/download/DUTS-TR.zip
+  test_source_url: http://saliencydetection.net/duts/download/DUTS-TE.zip
+  train_local_zipped_path: artifacts/data_ingestion/DUTS-TR.zip
+  test_local_zipped_path: artifacts/data_ingestion/DUTS-TE.zip
+  
