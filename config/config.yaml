@@ -9,3 +9,8 @@ data_ingestion:
 
 training:
   root_dir: artifacts/training
+
+model_evaluation:
+  model_path: artifacts/training/saved_models/u2net/u2net.pth
+  test_data_dir: artifacts/data_ingestion/test_data/test_images
+  prediction_dir: artifacts/data_ingestion/test_data/u2net_results

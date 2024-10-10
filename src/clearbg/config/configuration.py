@@ -1,6 +1,6 @@
 from clearbg.constants import *
 from clearbg.utils.common import read_yaml, create_directories
-from clearbg.entity.config_entity import DataIngestionConfig, TrainingConfig
+from clearbg.entity.config_entity import DataIngestionConfig, TrainingConfig, EvaluationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -47,3 +47,12 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+    def get_evaluation_config(self) -> EvaluationConfig:
+        # Here we gather configurations needed for the model evaluation
+        return EvaluationConfig(
+            model_path=Path(self.config['model_evaluation']['model_path']),
+            test_data_dir=Path(self.config['model_evaluation']['test_data_dir']),
+            prediction_dir=Path(self.config['model_evaluation']['prediction_dir']),
+            params=self.params  
+        )

@@ -1,0 +1,41 @@
+stages:
+  data_ingestion:
+    cmd: python src/clearbg/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/clearbg/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/DUTS-TR.zip
+      - artifacts/data_ingestion/DUTS-TE.zip
+      - artifacts/data_ingestion/DUTS-TR
+      - artifacts/data_ingestion/DUTS-TE
+
+
+  training:
+    cmd: python src/clearbg/pipeline/stage_02_model_trainer.py
+    deps:
+      - src/clearbg/pipeline/stage_02_model_trainer.py
+      - config/config.yaml
+      - artifacts/data_ingestion/DUTS-TR
+    params:
+      - epochs
+      - image_size
+      - learning_rate
+      - batch_size
+      - save_frequency
+    outs:
+      - artifacts/training/u2net.pth
+
+
+  evaluation:
+    cmd: python src/clearbg/pipeline/stage_03_mlflow_pipeline.py
+    deps:
+      - src/clearbg/pipeline/stage_03_mlflow_pipeline.py
+      - config/config.yaml
+      - artifacts/data_ingestion/DUTS-TE
+      - artifacts/training/u2net.pth
+    params:
+      - epochs
+      - image_size
+      - batch_size
+      - learning_rate

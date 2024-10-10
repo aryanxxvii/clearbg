@@ -10,12 +10,13 @@ from torchvision import transforms, utils
 
 from clearbg.utils.common import read_yaml, create_directories
 from clearbg.constants import PROJECT_ROOT
-from clearbg.entity.config_entity import TrainingConfig
+from clearbg.config.configuration import ConfigurationManager
 from clearbg.utils.utils import RescaleT, RandomCrop, ToTensorLab, SalObjDataset
 from clearbg.model.u2net import U2NET
+from typing import List
 
 class Training:
-    def __init__(self, config: TrainingConfig):
+    def __init__(self, config: ConfigurationManager):
         self.config_manager = config
         self.data_ingestion_config = self.config_manager.get_data_ingestion_config()
         self.training_config = self.config_manager.get_training_config()

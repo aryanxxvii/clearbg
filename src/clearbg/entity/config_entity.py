@@ -17,3 +17,10 @@ class TrainingConfig:
     image_size: int
     learning_rate: float
     batch_size: int
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    model_path: Path
+    test_data_dir: Path
+    prediction_dir: Path
+    params: dict
