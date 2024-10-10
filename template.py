@@ -19,7 +19,7 @@ files_to_be_created = [
     "config/config.yaml",
     "dvc.yaml",
     "params.yaml",
-    "requirements.txt",
+    "pyproject.toml",
     "setup.py",
     "research/trials.ipynb",
     "templates/index.html"

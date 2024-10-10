@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clearbg"
+version = "0.0.0"
+description = "Background removal using U2Net"
+readme = "README.md"
+authors = [
+    { name = "Aryan Wadhawan", email = "aryan.xxvii@gmail.com" }
+]
+license = { file = "LICENSE" }  # Update if you have a license file
+dependencies = [
+    "torch",
+    "torchvision",
+    "pillow",
+    "pandas",
+    "dvc",
+    "mlflow",
+    "notebook",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "python-box",
+    "pyYAML",
+    "tqdm",
+    "ensure",
+    "joblib",
+    "types-pyYAML",
+    "scipy",
+    "Flask",
+    "Flask-Cors",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",  # Add development dependencies here, e.g., testing libraries
+    "black",   # For code formatting
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
