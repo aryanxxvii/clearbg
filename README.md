@@ -1,4 +1,5 @@
 # ClearBG: Background Removal using U^2-Net
+[U^2-Net: Going Deeper with Nested U-Structure for Salient Object Detection](https://arxiv.org/abs/2005.09007)
 
 
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/aryanxxvii/clearbg_space)
