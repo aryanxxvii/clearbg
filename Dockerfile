@@ -19,4 +19,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["python", "src/clearbg/main.py"]  # Update with your actual entry point
+CMD ["python", "main.py"]
